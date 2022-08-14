@@ -16,7 +16,7 @@ class ShiftTest < Minitest::Test
   def test_it_can_create_a_5_digit_key
     shift = Shift.new
 
-    assert_equal 5, shift.key.length
+    assert_equal 5, shift.random.length
   end
 
 end

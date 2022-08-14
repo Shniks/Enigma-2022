@@ -1,11 +1,7 @@
 class Shift
 
   def random
-    rand(0..9999)
-  end
-
-  def key
-    sprintf '%05d', random
+    sprintf '%05d', rand(0..9999)
   end
 
 end
