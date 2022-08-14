@@ -24,7 +24,7 @@ class KeysTest < Minitest::Test
 
     keys.stub(:random, stub) do
       assert_equal "02715", keys.random
-      assert_equal ["02", "27", "71", "15"], keys.keys
+      assert_equal [2, 27, 71, 15], keys.keys
     end
   end
 
