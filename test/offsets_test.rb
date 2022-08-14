@@ -19,4 +19,13 @@ class OffsetTest < Minitest::Test
     assert_equal 4, offsets.offset.length
   end
 
+  def test_it_can_generate_the_4_offsets
+    offsets = Offsets.new
+    stub = "5908"
+
+    offsets.stub(:offset, stub) do
+      assert_equal [5, 9, 0, 8], offsets.offsets
+    end
+  end
+
 end
