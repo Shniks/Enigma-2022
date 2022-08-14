@@ -3,19 +3,19 @@ SimpleCov.start
 require 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/key'
+require './lib/keys'
 
-class KeyTest < Minitest::Test
+class KeysTest < Minitest::Test
   def test_if_it_exists
-    key = Key.new
+    keys = Keys.new
 
-    assert_instance_of Key, key
+    assert_instance_of Keys, keys
   end
 
   def test_it_can_create_a_5_digit_random_number
-    key = Key.new
+    keys = Keys.new
 
-    assert_equal 5, key.random.length
+    assert_equal 5, keys.random.length
   end
 
 end
