@@ -13,17 +13,17 @@ class OffsetTest < Minitest::Test
     assert_instance_of Offsets, offsets
   end
 
-  def test_it_can_generate_the_offset
+  def test_it_can_generate_the_last_four_for_offset
     offsets = Offsets.new
 
-    assert_equal 4, offsets.offset.length
+    assert_equal 4, offsets.last_four.length
   end
 
   def test_it_can_generate_the_4_offsets
     offsets = Offsets.new
     stub = "5908"
 
-    offsets.stub(:offset, stub) do
+    offsets.stub(:last_four, stub) do
       assert_equal [5, 9, 0, 8], offsets.offsets
     end
   end
