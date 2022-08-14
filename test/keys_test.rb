@@ -18,4 +18,14 @@ class KeysTest < Minitest::Test
     assert_equal 5, keys.random.length
   end
 
+  def test_it_can_create_4_separate_keys
+    keys = Keys.new
+    stub = "02715"
+
+    keys.stub(:random, stub) do
+      assert_equal "02715", keys.random
+      assert_equal ["02", "27", "71", "15"], keys.keys
+    end
+  end
+
 end
