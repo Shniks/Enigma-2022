@@ -11,8 +11,6 @@ Overview
 
 In this project you’ll use Ruby to build a tool for cracking an encryption algorithm. Make sure you understand the Encryption Algorithm and plan out what classes you may need prior to starting.
 
-Additionally, you will self assess your project before your evaluation. Make sure you read through the Evaluation Rubric prior to beginning so that you know what is expected of this project.
-
 ## Encryption Algorithm
 
 The encryption is based on the Caesar Cipher. The idea is that we can translate a character by shifting it a certain number of places down the alphabet.
