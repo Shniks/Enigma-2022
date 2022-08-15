@@ -12,14 +12,6 @@ class EnigmaTest < Minitest::Test
     assert_instance_of Enigma, enigma
   end
 
-  def test_it_has_a_dictionary
-    enigma = Enigma.new
-
-    assert_equal "a", enigma.dict.first
-    assert_equal " ", enigma.dict.last
-    assert_equal 27, enigma.dict.length
-  end
-
   def test_it_can_encrypt_with_a_key_and_date
     enigma = Enigma.new
 
