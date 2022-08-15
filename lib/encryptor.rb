@@ -1,3 +1,5 @@
+require './lib/shift'
+
 class Encryptor
 
   attr_reader :message, :key, :date
@@ -6,6 +8,10 @@ class Encryptor
     @message = message
     @key = key
     @date = date
+  end
+
+  def shifts(k = key, d = date)
+    Shift.new(k, d).shifts
   end
 
 end
