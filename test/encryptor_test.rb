@@ -4,7 +4,6 @@ require 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/encryptor'
-require 'pry'
 
 class EncryptorTest < Minitest::Test
   def test_if_it_exists

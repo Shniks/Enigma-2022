@@ -1,5 +1,4 @@
 require './lib/enigma'
-require 'pry'
 require 'time'
 
 #Read command line
