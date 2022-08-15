@@ -15,4 +15,8 @@ class Decryptor
     Shift.new(k, d).shifts
   end
 
+  def chars
+    message.downcase.chars
+  end
+
 end

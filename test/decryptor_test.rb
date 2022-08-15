@@ -27,4 +27,16 @@ class DecryptorTest < Minitest::Test
     assert_equal [3, 27, 73, 20], de.shifts
   end
 
+  def test_if_it_can_convert_message_string_to_an_array
+    de = Decryptor.new("hello world", "02715", "040895")
+
+    assert_equal ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"], de.chars
+  end
+
+  def test_if_it_can_convert_message_string_with_upcase_letters_to_an_array
+    de = Decryptor.new("hello world", "02715", "040895")
+
+    assert_equal ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"], de.chars
+  end
+
 end
