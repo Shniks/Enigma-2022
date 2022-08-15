@@ -31,7 +31,7 @@ class ShiftTest < Minitest::Test
   def test_if_it_can_output_final_shifts
     shift = Shift.new("02715", "040895")
 
-    assert_equal [3, 27, 73, 20], shift.shift
+    assert_equal [3, 27, 73, 20], shift.shifts
   end
 
 end

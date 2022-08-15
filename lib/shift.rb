@@ -10,7 +10,7 @@ class Shift
     @date = date
   end
 
-  def shift
+  def shifts
     keys(key).map.with_index do |value, index|
       value + offsets(date)[index]
     end
