@@ -14,4 +14,8 @@ class Encryptor
     Shift.new(k, d).shifts
   end
 
+  def chars
+    message.chars
+  end
+
 end
