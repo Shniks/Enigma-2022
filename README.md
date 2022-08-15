@@ -116,7 +116,7 @@ The `encrypt` method returns a hash with three keys:
 
 `Enigma#decrypt(ciphertext, key, date)`
 
-The `decrypt` method takes a ciphertext String and the Key used for encryption as arguments. The `decrypt` method can optionally take a date as the third argument. If no date is given, this method should use today’s date for decryption.
+The `decrypt` method takes a ciphertext String, the Key and the date used for encryption as arguments.
 
 The `decrypt` method returns a hash with three keys:
 
@@ -159,10 +159,6 @@ pry(main) > enigma.decrypt("keder ohulw", "02715", "040895")
 # encrypt a message with a key (uses today's date)
 pry(main)> encrypted = enigma.encrypt("hello world", "02715")
 #=> # encryption hash here
-
-#decrypt a message with a key (uses today's date)
-pry(main) > enigma.decrypt(encrypted[:encryption], "02715")
-#=> # decryption hash here
 
 # encrypt a message (generates random key and uses today's date)
 pry(main)> enigma.encrypt("hello world")
