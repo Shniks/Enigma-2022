@@ -1,4 +1,5 @@
 require './lib/shift'
+require './lib/dictionary'
 
 class Encryptor
 
@@ -16,6 +17,16 @@ class Encryptor
 
   def chars
     message.chars
+  end
+
+  def dict
+    Dictionary.new.dict
+  end
+
+  def encrypt
+    chars.each do |char|
+
+    end
   end
 
 end

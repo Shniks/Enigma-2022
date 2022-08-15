@@ -32,6 +32,14 @@ class EncryptorTest < Minitest::Test
     assert_equal ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"], en.chars
   end
 
+  def test_it_can_bring_in_the_dictionary
+    en = Encryptor.new("hello world", "02715", "040895")
+
+    assert_equal "a", en.dict.first
+    assert_equal " ", en.dict.last
+    assert_equal 27, en.dict.length
+  end
+
   def test_it_can_encrypt_with_a_key_and_date
     en = Encryptor.new("hello world", "02715", "040895")
 
