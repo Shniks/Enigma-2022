@@ -35,7 +35,7 @@ class EncryptorTest < Minitest::Test
   def test_it_can_encrypt_with_a_key_and_date
     en = Encryptor.new("hello world", "02715", "040895")
 
-    result = en.encrypt("hello world", "02715", "040895")
+    result = en.encrypt
     expectation =  {
                       encryption: "keder ohulw",
                       key: "02715",
