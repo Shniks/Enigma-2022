@@ -46,4 +46,10 @@ class EncryptorTest < Minitest::Test
     assert_equal "keder ohulw", en.encrypt
   end
 
+  def test_it_can_encrypt_a_message_with_characters_not_in_dictionary
+    en = Encryptor.new("hello world!!", "02715", "040895")
+
+    assert_equal "keder ohulw!!", en.encrypt
+  end
+
 end

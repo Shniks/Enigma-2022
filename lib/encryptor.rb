@@ -28,7 +28,7 @@ class Encryptor
     zipped = chars.zip(shifts.cycle)
     zipped.each do |zip|
       if !dict.include?(zip.first)
-        new << char
+        new << zip.first
       else
         rotate_by = dict.index(zip[0]) + zip[1]
         new << dict.rotate(rotate_by).first
