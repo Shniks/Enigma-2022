@@ -53,4 +53,10 @@ class DecryptorTest < Minitest::Test
     assert_equal "hello world", de.decrypt
   end
 
+  def test_it_can_decrypt_a_message_with_characters_not_in_dictionary
+    de = Decryptor.new("keder ohulw!@", "02715", "040895")
+
+    assert_equal "hello world!@", de.decrypt
+  end
+
 end
