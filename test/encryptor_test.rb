@@ -32,4 +32,17 @@ class EncryptorTest < Minitest::Test
     assert_equal ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"], en.chars
   end
 
+  def test_it_can_encrypt_with_a_key_and_date
+    en = Encryptor.new("hello world", "02715", "040895")
+
+    result = enigma.encrypt("hello world", "02715", "040895")
+    expectation =  {
+                      encryption: "keder ohulw",
+                      key: "02715",
+                      date: "040895"
+                    }
+
+    assert_equal expectation, result
+  end
+
 end
