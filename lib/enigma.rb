@@ -7,4 +7,9 @@ class Enigma
     { encryption: rotated, key: key, date: date }
   end
 
+  def decrypt(message, key, date = (Time.now.strftime("%d%m%y")))
+    rotated = Decryptor.new(message, key, date).decrypt
+    { decryption: rotated, key: key, date: date }
+  end
+
 end
