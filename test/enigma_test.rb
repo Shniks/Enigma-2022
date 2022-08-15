@@ -38,22 +38,22 @@ class EnigmaTest < Minitest::Test
     assert_equal expectation, result
   end
 
-  def test_it_can_encrypt_with_no_key_or_date_provided #need to test this
-    enigma = Enigma.new
+  # def test_it_can_encrypt_with_no_key_or_date_provided #need to test this
+  #   enigma = Enigma.new
+  #
+  #   stub = "hello world", "02715", "040895"
+  #
+  #   enigma.stub(:encrypt, stub) do
+  #     result = enigma.encrypt("hello world")
+  #     expectation =  {
+  #       encryption: "okjdvfugyrb",
+  #       key: "02715",
+  #       date: "040895"
+  #     }
+  #
+  #     assert_equal expectation, result
+  #   end
 
-    stub = "02715"
-
-    # enigma.encrypt("hello world").stub(:message, stub) do
-      result = enigma.encrypt("hello world")
-      expectation =  {
-        encryption: "okjdvfugyrb",
-        key: "02715",
-        date: "140822"
-      }
-
-      assert_equal expectation, result
-    # end
-
-  end
+  # end
 
 end
