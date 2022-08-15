@@ -4,6 +4,7 @@ require 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/encryptor'
+require 'pry'
 
 class EncryptorTest < Minitest::Test
   def test_if_it_exists
@@ -50,6 +51,12 @@ class EncryptorTest < Minitest::Test
     en = Encryptor.new("hello world", "02715", "040895")
 
     assert_equal "keder ohulw", en.encrypt
+  end
+
+  def test_it_can_encrypt_with_a_key_and_date_and_some_upper_case_letters
+    en = Encryptor.new("Hello WorLd!", "02715", "040895")
+
+    assert_equal "keder ohulw!", en.encrypt
   end
 
   def test_it_can_encrypt_a_message_with_characters_not_in_dictionary
