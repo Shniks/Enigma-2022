@@ -3,7 +3,8 @@ require './lib/encryptor'
 class Enigma
 
   def encrypt(message, key = nil, date = nil)
-    Encryptor.new(message, key, date)
+    rotated = Encryptor.new(message, key, date).encrypt
+    { encryption: rotated, key: key, date: date }
   end
 
 end
