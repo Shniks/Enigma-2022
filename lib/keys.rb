@@ -1,7 +1,9 @@
 class Keys
 
-  def random
-    sprintf '%05d', rand(0..9999)
+  attr_reader :random
+
+  def initialize(random = (sprintf '%05d', rand(0..9999)))
+    @random = random
   end
 
   def keys

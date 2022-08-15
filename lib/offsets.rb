@@ -2,8 +2,14 @@ require 'time'
 
 class Offsets
 
+  attr_reader :date
+
+  def initialize(date = (Time.now.strftime("%d%m%y")))
+    @date = date
+  end
+
   def last_four
-    (Time.now.strftime("%d%m%y").to_i ** 2).to_s[-4..-1]
+    (date.to_i ** 2).to_s[-4..-1]
   end
 
   def offsets
