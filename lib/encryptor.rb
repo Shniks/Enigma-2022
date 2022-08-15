@@ -16,7 +16,7 @@ class Encryptor
   end
 
   def chars
-    message.chars
+    message.downcase.chars
   end
 
   def dict

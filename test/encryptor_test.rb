@@ -32,6 +32,12 @@ class EncryptorTest < Minitest::Test
     assert_equal ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"], en.chars
   end
 
+  def test_if_it_can_convert_message_string_with_upcase_letters_to_an_array
+    en = Encryptor.new("Hello WoRld", "02715", "040895")
+
+    assert_equal ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"], en.chars
+  end
+
   def test_it_can_bring_in_the_dictionary
     en = Encryptor.new("hello world", "02715", "040895")
 
