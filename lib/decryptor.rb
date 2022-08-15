@@ -1,7 +1,9 @@
 require './lib/shift'
 require './lib/dictionary'
+require './lib/common'
 
 class Decryptor
+  include Common
 
   attr_reader :message, :key, :date
 
@@ -11,17 +13,6 @@ class Decryptor
     @date = date
   end
 
-  def shifts(k = key, d = date)
-    Shift.new(k, d).shifts
-  end
-
-  def chars
-    message.downcase.chars
-  end
-
-  def dict
-    Dictionary.new.dict
-  end
 
 
 end
