@@ -40,6 +40,7 @@ class EnigmaTest < Minitest::Test
     assert_equal expectation, result
   end
 
+
   # def test_it_can_encrypt_with_no_key_or_date_provided #need to test this
   #   enigma = Enigma.new
   #
@@ -57,5 +58,18 @@ class EnigmaTest < Minitest::Test
   #   end
 
   # end
+
+  def test_it_can_decrypt_with_a_key_and_date
+    enigma = Enigma.new
+
+    result = enigma.decrypt("keder ohulw", "02715", "040895")
+    expectation =  {
+                      decryption: "hello world",
+                      key: "02715",
+                      date: "040895"
+                    }
+
+    assert_equal expectation, result
+  end
 
 end
