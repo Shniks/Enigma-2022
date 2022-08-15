@@ -116,7 +116,7 @@ The `encrypt` method returns a hash with three keys:
 
 `Enigma#decrypt(ciphertext, key, date)`
 
-The `decrypt` method takes a ciphertext String, the Key and the date used for encryption as arguments.
+The `decrypt` method takes a ciphertext String, the key and the date used for encryption as arguments.
 
 The `decrypt` method returns a hash with three keys:
 
