@@ -16,7 +16,7 @@ class DecryptorTest < Minitest::Test
   def test_it_has_attributes
     de = Decryptor.new("keder ohulw", "02715", "040895")
 
-    assert_equal "hello world", de.message
+    assert_equal "keder ohulw", de.message
     assert_equal "02715", de.key
     assert_equal "040895", de.date
   end
@@ -30,13 +30,13 @@ class DecryptorTest < Minitest::Test
   def test_if_it_can_convert_message_string_to_an_array
     de = Decryptor.new("keder ohulw", "02715", "040895")
 
-    assert_equal ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"], de.chars
+    assert_equal ["k", "e", "d", "e", "r", " ", "o", "h", "u", "l", "w"], de.chars
   end
 
   def test_if_it_can_convert_message_string_with_upcase_letters_to_an_array
     de = Decryptor.new("keder ohulw", "02715", "040895")
 
-    assert_equal ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"], de.chars
+    assert_equal ["k", "e", "d", "e", "r", " ", "o", "h", "u", "l", "w"], de.chars
   end
 
   def test_it_can_bring_in_the_dictionary
