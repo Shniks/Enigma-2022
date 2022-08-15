@@ -28,11 +28,13 @@ class EnigmaTest < Minitest::Test
   def test_it_can_encrypt_with_only_key_provided
     enigma = Enigma.new
 
+    date = Time.now.strftime("%d%m%y")
+
     result = enigma.encrypt("hello world", "02715")
     expectation =  {
                       encryption: "okjdvfugyrb",
                       key: "02715",
-                      date: "140822"
+                      date: "#{date}"
                     }
 
     assert_equal expectation, result
