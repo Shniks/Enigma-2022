@@ -1,3 +1,4 @@
+require './lib/shift'
 require './lib/dictionary'
 
 class Decryptor
@@ -10,4 +11,8 @@ class Decryptor
     @date = date
   end
 
-end 
+  def shifts(k = key, d = date)
+    Shift.new(k, d).shifts
+  end
+
+end
