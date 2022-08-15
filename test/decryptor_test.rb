@@ -39,4 +39,12 @@ class DecryptorTest < Minitest::Test
     assert_equal ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"], de.chars
   end
 
+  def test_it_can_bring_in_the_dictionary
+    de = Decryptor.new("hello world", "02715", "040895")
+
+    assert_equal "a", de.dict.first
+    assert_equal " ", de.dict.last
+    assert_equal 27, de.dict.length
+  end
+
 end

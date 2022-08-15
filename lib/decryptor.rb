@@ -19,4 +19,9 @@ class Decryptor
     message.downcase.chars
   end
 
+  def dict
+    Dictionary.new.dict
+  end
+
+
 end
