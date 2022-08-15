@@ -24,17 +24,20 @@ class Encryptor
   end
 
   def encrypt
-    new = []
-    zipped = chars.zip(shifts.cycle)
-    zipped.each do |zip|
-      if !dict.include?(zip.first)
-        new << zip.first
-      else
-        rotate_by = dict.index(zip[0]) + zip[1]
-        new << dict.rotate(rotate_by).first
-      end
+    rotated = []
+    chars.zip(shifts.cycle).each do |element|
+      insert_element_into_array(element, rotated)
     end
-    new.join
+    rotated.join
+  end
+
+  def insert_element_into_array(element, rotated)
+    if !dict.include?(element.first)
+      rotated << element.first
+    else
+      rotate_by = dict.index(element[0]) + element[1]
+      rotated << dict.rotate(rotate_by).first
+    end
   end
 
 end
