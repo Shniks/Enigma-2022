@@ -14,8 +14,8 @@ class Enigma
   end
 
   def crack(message, key, date)
-    rotated = Crack.new(message, key, date).decrypt
-    { decryption: rotated, key: key, date: date }
+    rotated = Crack.new(message, key, date).crack
+    { crack: rotated, key: key, date: date }
   end
 
 end
