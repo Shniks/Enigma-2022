@@ -9,7 +9,7 @@ class Crack
 
   def initialize(cipher, key, date)
     @cipher = cipher
-    @key = key
+    @key = "9999"
     @date = date
   end
 
