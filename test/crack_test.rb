@@ -38,4 +38,12 @@ class CrackTest < Minitest::Test
     assert_equal ["k", "e", "d", "e", "r", " ", "o", "h", "u", "l", "w", "t", "h", "n", "w"], cr.chars
   end
 
+  def test_it_can_bring_in_the_dictionary
+    cr = Crack.new("keder ohulwthnw", nil, "040895")
+
+    assert_equal "a", cr.dict.first
+    assert_equal " ", cr.dict.last
+    assert_equal 27, cr.dict.length
+  end
+
 end
