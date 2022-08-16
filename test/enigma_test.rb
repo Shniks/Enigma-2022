@@ -72,4 +72,17 @@ class EnigmaTest < Minitest::Test
     assert_equal expectation, result
   end
 
+  def test_it_can_crack_a_key_knowing_just_the_date_of_transmission
+    enigma = Enigma.new
+
+    result = enigma.crack("keder ohulwthnw", nil, "040895")
+    expectation =  {
+                      decryption: "hello world",
+                      key: "02715",
+                      date: "040895"
+                    }
+
+    assert_equal expectation, result
+  end
+
 end
