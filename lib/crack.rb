@@ -1,5 +1,4 @@
 require './lib/decryptor'
-require 'pry'
 
 class Crack
 
@@ -7,17 +6,18 @@ class Crack
 
   def initialize(cipher, date)
     @message= cipher
-    @key = "9999"
+    @key = "00000"
     @date = date
   end
 
   def crack
-    # rotated = Decryptor.new(message, @key, date).decrypt
-    # while rotated[-4..-1] != " end"
-    #   @key = (key.to_i + 1).to_s
-    #   rotated = Decryptor.new(message, @key, date).decrypt
-    # end
-    # print [rotated, key]
+    de = Decryptor.new(message, @key, date)
+    until de.decrypt[-4..-1] == " end"
+      @key = sprintf '%05d', (@key.to_i + 1)
+      break if @key == "100000"
+      de = Decryptor.new(message, @key, date)
+    end
+    [de.decrypt[0..-5], key]
   end
 
 end
