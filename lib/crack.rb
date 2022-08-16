@@ -5,10 +5,10 @@ require './lib/common'
 class Crack
   include Common
 
-  attr_reader :cipher, :key, :date
+  attr_reader :message, :key, :date
 
   def initialize(cipher, key, date)
-    @cipher = cipher
+    @message= cipher
     @key = "9999"
     @date = date
   end
