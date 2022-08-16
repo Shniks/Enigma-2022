@@ -46,4 +46,10 @@ class CrackTest < Minitest::Test
     assert_equal 27, cr.dict.length
   end
 
+  def test_it_can_crack_with_just_the_date
+    cr = Crack.new("keder ohulwthnw", nil, "040895")
+
+    assert_equal "hello world", cr.crack
+  end
+
 end
