@@ -77,7 +77,7 @@ class EnigmaTest < Minitest::Test
 
     result = enigma.crack("keder ohulwthnw", "040895")
     expectation =  {
-                      decryption: "hello world",
+                      crack: "hello world",
                       key: "02715",
                       date: "040895"
                     }
