@@ -75,7 +75,7 @@ class EnigmaTest < Minitest::Test
   def test_it_can_crack_a_key_knowing_just_the_date_of_transmission
     enigma = Enigma.new
 
-    result = enigma.crack("keder ohulwthnw", nil, "040895")
+    result = enigma.crack("keder ohulwthnw", "040895")
     expectation =  {
                       decryption: "hello world",
                       key: "02715",
