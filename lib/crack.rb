@@ -13,11 +13,14 @@ class Crack
   def crack
     de = Decryptor.new(message, @key, date)
     until de.decrypt[-4..-1] == " end"
-      @key = sprintf '%05d', (@key.to_i + 1)
-      break if @key == "100000"
+      advance_key
       de = Decryptor.new(message, @key, date)
     end
     [de.decrypt[0..-5], key]
+  end
+
+  def advance_key
+    @key = sprintf '%05d', (@key.to_i + 1)
   end
 
 end
